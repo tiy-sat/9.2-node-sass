@@ -1,0 +1,44 @@
+// Mixins
+
+=size($width, $height:$width)
+  width:  $width
+  height: $height
+
+=padding-vert($val)
+  padding-top:    $val
+  padding-bottom: $val
+
+=padding-horz($val)
+  padding-left:  $val
+  padding-right: $val
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+=transform-translate($x, $y)
+  -webkit-transform: translate($x, $y)
+  transform:         translate($x, $y)
+
+// This is dependent on parent container to have
+// position relative to get desired result
+
+%center-center
+  +transform-translate(-50%, -50%)
+  position: absolute
+  top: 50%
+  left: 50%
+  
+// IT RENDERED YAYAYAAY
+
+// Example usage:
+// .button
+//   +padding-vert(1rem)
+//   +padding-horz(1.4rem)
+//   +border-radius(100%)
+
+// Example usage:
+// .square
+//   +size(3rem)
